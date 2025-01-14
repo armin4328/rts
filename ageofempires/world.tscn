@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6webfk3ym6t2"]
+
+[ext_resource type="PackedScene" uid="uid://dk2y8rx5r3se3" path="res://selector.tscn" id="1_ev5e1"]
+
+[node name="World" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Selector" parent="." instance=ExtResource("1_ev5e1")]
