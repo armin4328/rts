@@ -5,7 +5,7 @@ var mouse_start_pos : Vector2
 var mouse_and_pos : Vector2 
 
 func _input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and !Global.moving:
 		if event.button_index == 1 and event.is_pressed():
 			if !mouse_down:
 				mouse_down = true
