@@ -9,7 +9,7 @@ func _input(event):
 		if event.button_index == 1 and event.is_pressed():
 			if !mouse_down:
 				mouse_down = true
-				mouse_start_pos = event.global_position
+				mouse_start_pos = get_global_mouse_position()
 			global_position = mouse_start_pos
 		elif !event.is_pressed():
 			if mouse_down:
