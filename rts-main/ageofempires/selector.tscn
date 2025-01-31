@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk2y8rx5r3se3"]
-
-[ext_resource type="Script" path="res://selector.gd" id="1_j8med"]
-
-[node name="Selector" type="ColorRect"]
-color = Color(0.952941, 0.952941, 0.952941, 0.478431)
-script = ExtResource("1_j8med")
