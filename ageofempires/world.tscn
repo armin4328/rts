@@ -1386,7 +1386,4 @@ tile_set = SubResource("TileSet_am2ps")
 [node name="villager" parent="." instance=ExtResource("5_4qbde")]
 position = Vector2(398, 236)
 
-[node name="villager2" parent="." instance=ExtResource("5_4qbde")]
-position = Vector2(337, 236)
-
 [node name="camera" parent="." groups=["selectable"] instance=ExtResource("4_6rx6o")]
