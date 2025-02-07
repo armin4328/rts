@@ -3,25 +3,19 @@ extends ColorRect
 var mouse_down : bool
 var mouse_start_pos : Vector2
 var mouse_and_pos : Vector2 
-var nodes_in_rect = []
 
 func _input(event):
 	if event is InputEventMouseButton and !Global.moving:
 		if event.button_index == 1 and event.is_pressed():
 			if !mouse_down:
-				nodes_in_rect = []
 				mouse_down = true
 				mouse_start_pos = get_global_mouse_position()
 			global_position = mouse_start_pos
 		elif !event.is_pressed():
 			if mouse_down:
-				mouse_down = false
-				pressed_ended()
 				mouse_and_pos = event.global_position
+				mouse_down = false
 				size = Vector2.ZERO
-		if event.button_index == 2 and event.is_pressed():
-			for node in nodes_in_rect:
-				node.move_to(get_global_mouse_position())
 	if event is InputEventMouseMotion:
 		if mouse_down:
 			_update()
@@ -37,10 +31,3 @@ func _update():
 		scale.y = 1
 	
 	size = (get_global_mouse_position() - mouse_start_pos)*scale
-
-func pressed_ended():
-	var nodes_to_get = get_tree().get_nodes_in_group("selectable")
-	if nodes_to_get != null:
-		for node in nodes_to_get:
-			if get_global_rect().has_point(node.global_position):
-				nodes_in_rect.append(node)
